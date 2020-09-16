@@ -1,18 +1,20 @@
-import React from 'react';
-import Week1 from './Week1';
+import React, { useEffect, useState } from 'react';
 import {
   useParams,
 } from "react-router-dom";
+const ReactMarkdown = require('react-markdown')
 
-function Week() {
+const Week = () => {
   let { weekId } = useParams();
-  const components = {
-    "1" : Week1
-  };
-  const TheWeek = components[weekId];
+  const [data, setData] = useState([]);
+  useEffect(() => {
+  fetch(`http://localhost:1337/reports/week/${weekId}`)
+    .then(res => res.json())
+    .then(res => setData(res.data));
+  });
   return (
-    <div>
-      < TheWeek />
+    <div className="report">
+      <ReactMarkdown source={data} />
     </div>
   );
 }

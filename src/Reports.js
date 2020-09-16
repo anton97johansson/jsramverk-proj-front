@@ -24,7 +24,6 @@ function Reports() {
 
       <Switch>
         <Route exact path={path}>
-          <h3>Please select a week.</h3>
         </Route>
         <Route path={`${path}/:reportid`}>
           <Weeks />

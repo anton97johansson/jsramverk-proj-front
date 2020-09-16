@@ -16,9 +16,10 @@ class Week1 extends Component {
   }
 
   render() {
+    const input = '# This is a header\n\nAnd this is a paragraph';
     return (
       <div className="report">
-        <ReactMarkdown source={this.state.theReadme} />
+        <ReactMarkdown source={input} />
       </div>
     )
   }
