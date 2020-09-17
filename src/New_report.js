@@ -28,6 +28,7 @@ class NewReport extends Component {
       return (
       <div className="form">
       <form onSubmit={this.handleSubmit}>
+      <h4> Write your week report in markdown </h4>
         <label htmlFor="week">Enter week</label>
         <input id="week" name="week" type="text" />
 
