@@ -14,7 +14,7 @@ class NewReport extends Component {
           data: event.target.data.value
       };
       console.log(data);
-      fetch('http://localhost:1337/reports', {
+      fetch('https://me-api.antonscript.me/reports', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {

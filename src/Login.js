@@ -14,7 +14,7 @@ class Login extends Component {
           password: event.target.password.value
       };
       console.log(data);
-      fetch('http://localhost:1337/login', {
+      fetch('https://me-api.antonscript.me/login', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {

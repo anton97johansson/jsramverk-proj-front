@@ -8,7 +8,7 @@ const Week = () => {
   let { weekId } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
-  fetch(`http://localhost:1337/reports/week/${weekId}`)
+  fetch(`https://me-api.antonscript.me/reports/week/${weekId}`)
     .then(res => res.json())
     .then(res => setData(res.data));
   });

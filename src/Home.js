@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Home = () => {
     const [data, setData] = useState('');
     useEffect(() => {
-    fetch('http://localhost:1337/')
+    fetch('https://me-api.antonscript.me/')
       .then(res => res.json())
       .then(res => setData(res.data.msg));
     });

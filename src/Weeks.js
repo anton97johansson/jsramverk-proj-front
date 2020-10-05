@@ -10,7 +10,7 @@ import {
 const Weeks = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
-    fetch('http://localhost:1337/reports/weeks')
+    fetch('https://me-api.antonscript.me/reports/weeks')
       .then(res => res.json())
       .then(res => setData(res));
     }, []);
