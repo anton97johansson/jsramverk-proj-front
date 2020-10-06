@@ -21,7 +21,7 @@ test.describe("me-page", function() {
         browser = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).build();
 
-        browser.get("http://localhost:3000/");
+        browser.get("https://antonscript.me/");
         done();
     });
 
@@ -29,6 +29,7 @@ test.describe("me-page", function() {
         browser.quit();
         done();
         });
+
     function goToNavLink(target) {
         browser.findElement(By.linkText(target)).then(function(element) {
             element.click();
@@ -41,7 +42,7 @@ test.describe("me-page", function() {
         });
     }
 
-    function assertH1(target) {
+    function assertH2(target) {
         browser.findElement(By.css("h2")).then(function(element) {
             element.getText().then(function(text) {
                 assert.equal(text, target);
@@ -50,12 +51,40 @@ test.describe("me-page", function() {
     }
 
 
-    test.it("Test go to Home", function(done) {
+    test.it("Test go to Register", function(done) {
         // try use nav link
-        goToNavLink("Home");
+        goToNavLink("Register");
         //
         // assertH1("Home");
-        matchUrl("/" );
+        matchUrl("register" );
+
+        done();
+    });
+
+    test.it("Test go to Reports", function(done) {
+        // try use nav link
+        goToNavLink("Reports");
+        assertH2("Reports");
+        this.timeout(20000);
+        goToNavLink("Week");
+        //
+        // assertH1("Home");
+        matchUrl("reports/week" );
+
+        done();
+    });
+
+    test.it("Test go to Week 3", function(done) {
+        // try use nav link
+        goToNavLink("Reports");
+        assertH2("Reports");
+        this.timeout(20000);
+        goToNavLink("Week");
+        this.timeout(20000);
+        goToNavLink("Week 3");
+        //
+        // assertH1("Home");
+        matchUrl("reports/week/3" );
 
         done();
     });
