@@ -1,5 +1,8 @@
-[Link to  my github project](https://github.com/anton97johansson/jsramverk)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/anton97johansson/jsramverk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/anton97johansson/jsramverk/?branch=master)
 
+[![Build Status](https://scrutinizer-ci.com/g/anton97johansson/jsramverk/badges/build.png?b=master)](https://scrutinizer-ci.com/g/anton97johansson/jsramverk/build-status/master)
+
+[![Build Status](https://travis-ci.org/anton97johansson/jsramverk.svg?branch=master)](https://travis-ci.org/anton97johansson/jsramverk)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Libaries Used
 
