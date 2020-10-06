@@ -18,8 +18,8 @@ test.describe("me-page", function() {
 
     test.beforeEach(function(done) {
         this.timeout(20000);
-        browser = new webdriver.Builder().
-            withCapabilities(webdriver.Capabilities.firefox()).build();
+        // browser = new webdriver.Builder().
+        browser = new webdriver.Builder().forBrowser('firefox').setFirefoxOptions(new firefox.Options().headless()).build();
 
         browser.get("https://antonscript.me/");
         done();
