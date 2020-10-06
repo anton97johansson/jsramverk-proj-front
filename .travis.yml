@@ -3,7 +3,7 @@ node_js:
   - 'node'
   - '11'
   - '10'
- git:
+git:
     submodules: false
 addons:
   firefox: "49.0.2"
