@@ -3,6 +3,7 @@ node_js:
   - 'node'
   - '11'
   - '10'
+sudo: false
 git:
     submodules: false
 addons:
