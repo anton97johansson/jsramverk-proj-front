@@ -3,6 +3,8 @@ node_js:
   - 'node'
   - '11'
   - '10'
+ git:
+    submodules: false
 addons:
   firefox: "49.0.2"
 before_install:
