@@ -7,6 +7,7 @@ import Register from './Register';
 import Login from './Login';
 import NewReport from './New_report';
 import Logout from './Logout';
+import Chat from './Chat';
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,6 +29,9 @@ function App() {
           </li>
           <li>
             <Link to="/register">Register</Link>
+          </li>
+          <li>
+            <Link to="/chat">Chat</Link>
           </li>
           <li>
             <Link to="/reports">Reports</Link>
@@ -54,6 +58,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/chat">
+            <Chat />
           </Route>
           <Route path="/login">
             {sessionStorage.getItem("token") ? <Redirect to="/logout" /> : <Login />}
