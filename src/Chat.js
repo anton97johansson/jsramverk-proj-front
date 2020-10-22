@@ -3,6 +3,7 @@ import ChatInput from './ChatInput';
 import io from 'socket.io-client';
 
 const socket = io.connect("https://socket-server.antonscript.me");
+// const socket = io.connect("http://localhost:8300");
 // const wholeSocket = io("http://localhost:3001");
 
 class Chat extends Component {
@@ -11,6 +12,9 @@ class Chat extends Component {
       this.state = { allMsg: [] };
     }
     componentDidMount() {
+        fetch('https://me-api.antonscript.me/chat')
+        .then(response => response.json())
+        .then(data => this.setState({ allMsg: data }));
     socket.on("chat message", (message) => {
       this.setState({
         allMsg: [...this.state.allMsg, message]
