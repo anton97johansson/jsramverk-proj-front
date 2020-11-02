@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Title from './Title';
 import Home from './Home';
-import Reports from './Reports';
 import Register from './Register';
 import Login from './Login';
-import NewReport from './New_report';
 import Logout from './Logout';
-import Chat from './Chat';
+import Trade from './Trade';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +16,10 @@ import {
 // let token = sessionStorage.getItem("token") || null;
 
 function App() {
+    const [index, setIndex] = useState(0);
+    function forceRerender() {
+        setIndex(index + 1);
+    }
   return (
     <div className="App">
       <Title />
@@ -31,10 +33,7 @@ function App() {
             <Link to="/register">Register</Link>
           </li>
           <li>
-            <Link to="/chat">Chat</Link>
-          </li>
-          <li>
-            <Link to="/reports">Reports</Link>
+            <Link to="/trade">Trade</Link>
           </li>
           <li>
             <Link to="/login">Login</Link>
@@ -42,9 +41,7 @@ function App() {
           <li>
             <Link to="/logout">Logout</Link>
           </li>
-          <li>
-            <Link to="/new">New or replace existing reports</Link>
-          </li>
+
         </ul>
 
         <hr />
@@ -53,23 +50,17 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/reports">
-            <Reports />
-          </Route>
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="/chat">
-            <Chat />
+          <Route path="/trade">
+            <Trade />
           </Route>
           <Route path="/login">
-            {sessionStorage.getItem("token") ? <Redirect to="/logout" /> : <Login />}
+            {sessionStorage.getItem("token") ? <Redirect to="/logout" /> : <Login forceRerender={forceRerender} />}
           </Route>
           <Route path="/logout">
-            {sessionStorage.getItem("token") ? <Logout /> : <Redirect to="/login" />}
-          </Route>
-          <Route path="/new">
-            {sessionStorage.getItem("token") ? <NewReport /> : <Redirect to="/login" />}
+            {sessionStorage.getItem("token") ? <Logout forceRerender={forceRerender} /> : <Redirect to="/login" />}
           </Route>
         </Switch>
       </div>

@@ -1,4 +1,13 @@
-
+@media (max-width: 800px) {
+  .form  {
+    margin: 10px 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.chart {
+    width: 100%;
+}
 .all-messages {
     width: 100%;
     height: 30vh;
@@ -22,9 +31,12 @@
 }
 
 .form {
+    width: 50%;
     text-align:left;
-    padding-left: 20em;
-    padding-right: 20em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .report {
     text-align:left;

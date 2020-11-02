@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
 class Logout extends Component {
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(event) {
        sessionStorage.removeItem("token");
-      window.location.reload();
+       sessionStorage.removeItem("user");
+      this.props.forceRerender();
     }
 
     render() {

@@ -4,7 +4,7 @@ function Title() {
     return (
         <div className="Title">
             <header>
-                <h1>JSramverk</h1>
+                <h1>Godisstänghimlen</h1>
                 <div className="Title-subtitle">
                 <p>Skapad i React</p>
                 </div>

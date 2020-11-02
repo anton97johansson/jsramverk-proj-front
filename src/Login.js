@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 class Login extends Component {
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -14,7 +14,7 @@ class Login extends Component {
           password: event.target.password.value
       };
       console.log(data);
-      fetch('https://me-api.antonscript.me/login', {
+      fetch('http://localhost:4000/login', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -27,7 +27,9 @@ class Login extends Component {
           }
         }).then(res => {
             sessionStorage.setItem("token", res.data.token);
-            window.location.reload();
+            sessionStorage.setItem("user", res.data.user.email);
+            // window.location.reload();
+            this.props.forceRerender();
         })
         .catch(error => console.error('Error:', error));
     }
