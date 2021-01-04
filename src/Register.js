@@ -13,7 +13,7 @@ class Register extends Component {
           email: event.target.email.value,
           password: event.target.password.value
       };
-      fetch('http://localhost:4000/register', {
+      fetch('https://proj-back.antonscript.me/register', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
